@@ -36,4 +36,7 @@ var bunny = {
   }
 };
 
+// if you swap an arrow function for the anonymous function above
+// why does it work correctly?
+
 bunny.showTasks();
