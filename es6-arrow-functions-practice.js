@@ -26,6 +26,31 @@ let func6 = (
 	return x + y;
 };
 
+const func = (state) => ({
+  hidden: 'hidden',
+  auth: 'auth',
+});
+
+const func2 = (state) => (2 +
+  3);
+
+const func3 = (state) => 2
+  + 3 +
+  1;
+
+
+var bark = () => 'bark!';
+var woof = () => 'woof!';
+
+var barkAndWoof = () => (
+  bark();
+  woof();
+);
+
+var barkAndWoof2 = () => (
+  bark() && woof()
+);
+
 var bunny = {
   name: 'Usagi',
   tasks: ['transform', 'eat cake', 'blow kisses'],

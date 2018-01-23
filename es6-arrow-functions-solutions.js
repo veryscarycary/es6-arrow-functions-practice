@@ -12,7 +12,7 @@
 
 // returns: 'Hi Jess'
 // explanation: explicit return in block exists
-((name) => {return 'Hi ' + name})('Jess') 
+((name) => {return 'Hi ' + name})('Jess')
 
 // returns: undefined
 // explanation: a block containing a single label. No explicit return.
@@ -40,6 +40,46 @@ let func6 = (
 ) => {
 	return x + y;
 }; // Works!
+
+// returns: {hidden: 'hidden', auth: 'auth'}
+// Even though the expression is written across multiple lines,
+// it still returns, because the inside of the parentheses is evaluated
+// as a single expression
+const func = (state) => ({
+  hidden: 'hidden',
+  auth: 'auth',
+});
+
+// returns: 5
+// And line breaks across multiple lines are okay
+const func2 = (state) => (2 +
+  3);
+
+// returns 6
+const func3 = (state) => 2
+  + 3 +
+  1;
+
+// returns: 'bark!'
+var bark = () => 'bark!';
+// returns: 'woof!'
+var woof = () => 'woof!';
+
+// returns: Unexpected token ;
+// () evaluates as an expression, so semicolons aren't allowed
+var barkAndWoof = () => (
+  bark();
+  woof();
+);
+
+// returns: 'woof!'
+// it's a valid control flow expression, starting with
+// 'bark!' evaluating to true, and 'woof!' evaluating to true
+// and returning
+var barkAndWoof2 = () => (
+  bark() && woof()
+);
+
 
 var bunny = {
   name: 'Usagi',
