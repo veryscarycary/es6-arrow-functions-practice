@@ -65,3 +65,6 @@ var bunny = {
 // why does it work correctly?
 
 bunny.showTasks();
+
+
+(() => console.log(arguments))(1, 2);
