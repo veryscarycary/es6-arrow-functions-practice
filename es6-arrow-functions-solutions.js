@@ -1,3 +1,5 @@
+// NOTE: arrow functions are also known as lambda functions or anonymous functions
+
 // returns: undefined
 // explanation: an empty block with an implicit return
 ((name) => {})()
@@ -91,7 +93,12 @@ var bunny = {
   }
 };
 
-bunny.showTasks();
-// [object Window] wants to transform
+// returns [object Window] wants to transform
 // [object Window] wants to eat cake
 // [object Window] wants to blow kisses
+bunny.showTasks();
+
+// returns ReferenceError: arguments is not defined
+// arrow functions do not have the arguments variable
+// ES5 anonymous functions like, (function () {console.log(arguments)})(1, 2);  will output [1, 2]
+(() => console.log(arguments))(1, 2);
